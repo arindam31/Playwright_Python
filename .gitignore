@@ -1,0 +1,7 @@
+.env
+
+# Virtual environ files
+.venv
+
+# cache files
+*.pyc
