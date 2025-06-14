@@ -2,6 +2,8 @@ import re
 import environ
 from playwright.sync_api import Page, expect
 
+
+
 def test_has_title(page: Page):
     page.goto("http://localhost:3000/login")
 
@@ -13,6 +15,7 @@ def test_login(page: Page):
     username = env("EMAIL")
     password = env("USER_PWD")
     page.goto("http://localhost:3000/login")
+    
     page.get_by_label("Username").fill(username)
     page.get_by_label("Password").fill(password)
     page.get_by_role("button", name=re.compile("Login", re.IGNORECASE)).click()
